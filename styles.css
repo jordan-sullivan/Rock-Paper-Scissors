@@ -11,6 +11,11 @@ body {
   flex-direction: row;
   font-family: Verdana, sans-serif;
 }
+div {
+  display: flex;
+  justify-content: center;
+  margin-top: 70%;
+}
 .player-image {
   height: 15%;
   width: 45%;
@@ -28,7 +33,7 @@ body {
   padding-top: 20px;
 }
 
-/* -----Left Aside----- */
+/* -----Both Asides----- */
 aside {
   background-color: #a9ddeb;
   height: 100%;
@@ -40,6 +45,11 @@ h3 {
   font-size: 200%;
   font-weight: lighter;
 }
+.wins-calculator {
+  font-size: 150%;
+  font-weight: normal;
+}
+/* -----Left Aside----- */
 .left-aside {
   display: flex;
   flex-direction: column;
@@ -47,19 +57,32 @@ h3 {
   align-items: center;
   padding-top: 20%;
 }
-
+.change-game-button {
+  height: 60px;
+  width: 190px;
+  font-size: 100%;
+  background-color: #f9a3dc;
+  border-radius: 8%;
+  border-color: #f9a3dc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* -----Main Center----- */
 main {
+  border: 2px solid black;
   height: 100%;
   width: 70%;
   background-color: #cc98ed;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  /* flex-direction: column; */
   justify-content: center;
 }
 
 h1 {
+  border: 2px solid red;
   font-size: 450%;
   font-weight: bolder;
   display: flex;
@@ -68,17 +91,29 @@ h1 {
 }
 
 h2 {
+  border: 2px solid blue;
   font-size: 280%;
   font-weight: lighter;
   display: flex;
   justify-content: center;
   margin: 0%;
 }
+.rules-section {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.classic-rules {
+  border: 2px solid red;
+}
+.advanced-rules {
+  border: 2px solid blue;
+}
 .characters-classic {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* justify-content: center; */
   justify-content: space-evenly;
 }
 .characters-advanced {
