@@ -1,0 +1,102 @@
+/* * {
+  border: 2px solid black;
+} */
+/* -----General----- */
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0%;
+  display: flex;
+  flex-direction: row;
+  font-family: Verdana, sans-serif;
+}
+.player-image {
+  height: 15%;
+  width: 45%;
+}
+.classic-character-image {
+  height: 10%;
+  width: 20%;
+  padding-top: 20px;
+}
+.advanced-character-image {
+  height: 10%;
+  width: 20%;
+  padding-left: 70px;
+  padding-right: 55px;
+  padding-top: 20px;
+}
+
+/* -----Left Aside----- */
+aside {
+  background-color: #a9ddeb;
+  height: 100%;
+  width: 15%;
+  position: relative;
+  min-height: 200px;
+}
+h3 {
+  font-size: 200%;
+  font-weight: lighter;
+}
+.left-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20%;
+}
+
+/* -----Main Center----- */
+main {
+  height: 100%;
+  width: 70%;
+  background-color: #cc98ed;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 450%;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+h2 {
+  font-size: 280%;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  margin: 0%;
+}
+.characters-classic {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  justify-content: space-evenly;
+}
+.characters-advanced {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* -----Right Aside----- */
+.right-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20%;
+}
+
+/* -----Hidden----- */
+.hidden {
+  display: none;
+}
