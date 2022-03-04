@@ -6,5 +6,5 @@ class Player {
   }
   takeTurn() {}
 }
-
+var human = new Player("Human", token, wins);
 var computer = new Player("Computer", token, wins);
