@@ -3,6 +3,7 @@ class Game {
     this.name = name;
     this.type = type;
   }
+  playClassicGame() {}
 }
 // A Game should include:
 // Two Player instances

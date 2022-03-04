@@ -1,13 +1,52 @@
 //----------Global Variables----------
+
 // A timeout is used after a completed game to reset the board.
 
-// You’ll need to make two versions of Rock, Paper, Scissors - “classic” and some variation. The variation should include more than 3 options (the one in the video has 5). You can invent your own variation, or do some research on variations here. Make sure you communicate the rules to your user!
 // ----------Query Selectors----------
-
+var rulesSection = document.querySelector(".rules-section");
+var classicRulesButton = document.querySelector(".classic-rules");
+var advancedRulesButton = document.querySelector(".advanced-rules");
+var chooseCompetitorTitle = document.querySelector(".choose-competitor");
+var chooseGameTitle = document.querySelector(".choose-game");
+var charactersClassic = document.querySelector(".characters-classic");
+var charactersAdvanced = document.querySelector(".characters-advanced");
+var changeGameButton = document.querySelector(".change-game-button");
 //----------Event Listeners----------
-
+classicRulesButton.addEventListener("click", goToClassicGame);
+advancedRulesButton.addEventListener("click", goToAdvancedGame);
+changeGameButton.addEventListener("click", returnToHomePage);
 //----------Functions----------
 
+function goToClassicGame() {
+  viewElement(chooseCompetitorTitle);
+  hideElement(chooseGameTitle);
+  hideElement(rulesSection);
+  viewElement(charactersClassic);
+  viewElement(changeGameButton);
+}
+function goToAdvancedGame() {
+  goToClassicGame();
+  viewElement(charactersAdvanced);
+}
+function returnToHomePage() {
+  hideElement(changeGameButton);
+  hideElement(charactersClassic);
+  hideElement(charactersAdvanced);
+  viewElement(rulesSection);
+  hideElement(chooseCompetitorTitle);
+  viewElement(chooseGameTitle);
+}
+
+// assign the "Click Me" string to the btn. innerHTML property.
+// use document. body. appendChild() to append the button element to the <body> tag.
+
+function viewElement(element) {
+  element.classList.remove("hidden");
+}
+
+function hideElement(element) {
+  element.classList.add("hidden");
+}
 // <a href="https://www.flaticon.com/free-icons/scissors" title="scissors icons">Scissors icons created by Freepik - Flaticon</a>
 // //Scissors
 // <a href="https://www.flaticon.com/free-icons/paper-plane" title="paper plane icons">Paper plane icons created by Freepik - Flaticon</a>

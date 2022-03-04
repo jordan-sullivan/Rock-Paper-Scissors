@@ -14,7 +14,7 @@
         <p class="wins-calculator">wins: 0</p>
       </section>
       <div>
-        <button class="change-game-button">Change Game</button>
+        <button class="change-game-button hidden">Change Game</button>
       </div>
     </aside>
 
@@ -22,24 +22,24 @@
       <header>
         <h1>Rock, Paper, Scissors</h1>
         <h2 class="choose-game">✨ Choose your game ✨</h2>
-        <h2 class="choose-player hidden">✨ Choose your competitor ✨</h2>
+        <h2 class="choose-competitor hidden">✨ Choose your competitor ✨</h2>
         <h2 class="result hidden">Result here</h2>
       </header>
       <section class="rules-section">
-        <article class="classic-rules">
+        <button class="rules-buttons classic-rules">
           <h4>Classic Rules</h4>
-          <p>ROCK > SCISSORS</p>
-          <p>PAPER > ROCK</p>
-          <p>SCISSORS > PAPER</p>
-        </article>
-        <article class="advanced-rules">
+          <p>Rock: smashes Scissors</p>
+          <p>Paper: covers Rock</p>
+          <p>Scissors: cut paper</p>
+        </button>
+        <button class="rules-buttons advanced-rules">
           <h4>Advanced Rules</h4>
-          <p>ROCK > SCISSORS & UNICORN</p>
-          <p>PAPER > ROCK & DOLPHIN</p>
-          <p>SCISSORS > PAPER & UNICORN</p>
-          <p>UNICORN > PAPER & DOLPHIN</p>
-          <p>DOLPHIN > SCISSORS & ROCK</p>
-        </article>
+          <p>Rock: smashes Scissors, traps Unicorn</p>
+          <p>Paper: covers Rock, pollutes Dolphin home</p>
+          <p>Scissors: cut paper and Unicorn horn</p>
+          <p>Unicorn: eats Paper, more magical than Dolphin</p>
+          <p>Dolphin: squeaks sharper than scissors, swims over Rock</p>
+        </button>
       </section>
 
       <section class="characters-classic hidden">
