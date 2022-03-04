@@ -1,5 +1,4 @@
 //----------Global Variables----------
-
 // ----------Query Selectors----------
 var rulesSection = document.querySelector(".rules-section");
 var classicRulesButton = document.querySelector(".classic-rules");
@@ -52,10 +51,13 @@ function hideElement(element) {
 //I- human- chosen selection, computer= random selection
 //O- second random function is winner and message stating winner, timer, clear
 //S- steps:
+
 //1) human selects either rock, paper or scissors- can click on it to show choice.
+//-event target to click on icons? or make into buttons? that selection gets stored temoroarily...where?
+//-want to be able to click on icon and have it store to a variable or property? or as a new instanciation of a game? to then compare with randmom selection from computer... then pause... then the conditional selects the winner
 //2) computer "picks" from randomly generated function,
 //3) selections stored on page ?
-//4) another random selection decides winner.
+//4) logic conditional decides winner . if human wins, display message, increment , and refresh game after timer
 //5) winner displayed on page, a function with several conditionls runs to see whos is the winner, winner is announced on screen, Maybe Announcement on page could remind that paper covers rock for example.
 //6) counter for winner gets incremented by one. Repeat
 //Q-

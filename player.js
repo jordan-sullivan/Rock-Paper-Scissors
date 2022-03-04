@@ -1,10 +1,10 @@
 class Player {
-  constructor(name, token, wins) {
-    this.name = name;
+  constructor(player, wins) {
+    this.player = player;
     this.token = token;
     this.wins = wins;
   }
   takeTurn() {}
 }
-var human = new Player("Human", token, wins);
-var computer = new Player("Computer", token, wins);
+var human = new Player("Human", wins);
+var computer = new Player("Computer", wins);
