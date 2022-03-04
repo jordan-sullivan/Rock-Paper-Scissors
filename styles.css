@@ -33,7 +33,9 @@ div {
   padding-right: 55px;
   padding-top: 20px;
 }
-
+button:hover {
+  transform: scale(1.1);
+}
 /* -----Both Asides----- */
 aside {
   background-color: #a9ddeb;
@@ -68,6 +70,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 /* -----Main Center & Home Page----- */
 main {
@@ -103,7 +106,7 @@ h2 {
   justify-content: space-evenly;
   align-items: center;
 }
-.classic-rules {
+.rules-buttons {
   height: 65%;
   width: 40%;
   background-color: #f7b7f1;
@@ -111,21 +114,14 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.advanced-rules {
-  height: 65%;
-  width: 40%;
-  background-color: #f7b7f1;
-  border-radius: 8%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  cursor: pointer;
+  transition: 100ms;
 }
 h4 {
-  font-size: 170%;
+  font-size: 250%;
 }
 p {
-  font-size: 120%;
+  font-size: 140%;
   font-weight: lighter;
   color: purple;
   margin: 2%;
