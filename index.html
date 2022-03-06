@@ -10,7 +10,7 @@
     <aside class="aside">
       <section class="left-aside">
         <img class="player-image" src="./icons/girl.png" alt="Fairy person" />
-        <h3>Human</h3>
+        <h3 id="humanDecision">Human</h3>
         <p class="wins-calculator">wins: 0</p>
       </section>
       <div>
@@ -22,8 +22,8 @@
       <header>
         <h1>Rock, Paper, Scissors</h1>
         <h2 class="choose-game">✨ Choose your game ✨</h2>
-        <h2 class="choose-competitor hidden">✨ Make your selection ✨</h2>
-        <h2 class="result hidden">Result here</h2>
+        <h2 class="choose-selection hidden">✨ Make your selection ✨</h2>
+        <h2 class="result hidden" id="result">Result here</h2>
       </header>
       <section class="rules-section">
         <button class="rules-buttons classic-rules">
@@ -45,31 +45,38 @@
       <section class="characters-classic hidden">
         <img
           class="classic-character-image"
+          id="rock"
+          data="classic advanced"
           src="./icons/ring.png"
-          alt="Rock symbol, a
-        diamond ring"
+          alt="diamond ring icon"
         />
         <img
           class="classic-character-image"
+          id="paper"
+          data="classic advanced"
           src="./icons/paper-plane.png"
-          alt="Paper symbol, a paper airplane"
+          alt="paper icon"
         />
         <img
           class="classic-character-image"
+          id="scissors"
+          data="classic advanced"
           src="./icons/scissors.png"
-          alt="Scissors
-        symbol, a pair of scissors"
+          alt="scissors
+        icon"
         />
       </section>
 
       <section class="characters-advanced hidden">
         <img
           class="advanced-character-image"
+          id="dolphin"
           src="./icons/dolphin.png"
           alt="Dolphin icon"
         />
         <img
           class="advanced-character-image"
+          id="unicorn"
           src="./icons/unicorn.png"
           alt="Unicorn
         icon"
@@ -85,10 +92,12 @@
           alt="Computer on a
         desk"
         />
-        <h3>Computer</h3>
+        <h3 id="computerDecision">Computer</h3>
         <p class="wins-calculator">wins: 0</p>
       </section>
     </aside>
   </body>
+  <script type="text/javascript" src="player.js"></script>
+  <script type="text/javascript" src="game.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </html>
