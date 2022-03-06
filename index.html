@@ -10,7 +10,7 @@
     <aside class="aside">
       <section class="left-aside">
         <img class="player-image" src="./icons/girl.png" alt="Fairy person" />
-        <h3>Human</h3>
+        <h3 id="humanDecision">Human</h3>
         <p class="wins-calculator">wins: 0</p>
       </section>
       <div>
@@ -22,8 +22,8 @@
       <header>
         <h1>Rock, Paper, Scissors</h1>
         <h2 class="choose-game">✨ Choose your game ✨</h2>
-        <h2 class="choose-competitor hidden">✨ Make your selection ✨</h2>
-        <h2 class="result hidden">Result here</h2>
+        <h2 class="choose-selection hidden">✨ Make your selection ✨</h2>
+        <h2 class="result hidden" id="result">Result here</h2>
       </header>
       <section class="rules-section">
         <button class="rules-buttons classic-rules">
@@ -85,7 +85,7 @@
     </main>
 
     <aside class="aside">
-      <section class="right-aside">
+      <section class="right-aside" id="computerDecision">
         <img
           class="player-image"
           src="./icons/desk.png"

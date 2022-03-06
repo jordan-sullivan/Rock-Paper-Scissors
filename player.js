@@ -24,7 +24,7 @@ var player = new Player({
   gameType: "Classic",
   characters: ["rock", "paper", "scissors"],
 });
-console.log(player);
+//console.log(player);
 //should be able to take a turn by clicking on  an image. image will store to current.selection.
 // var human = new Player("Human", wins);
 // var computer = new Player("Computer", wins);

@@ -2,17 +2,14 @@ class Game {
   constructor(type, humanSelection, computerSelection, winner) {
     this.type = type || "Classic";
     this.characters = [];
-    this.player1 = new Player("Human", "🙋🏼‍♀️");
-    this.player2 = new Player("Computer", "💻");
-    this.humanSelection = humanSelection;
-    this.computerSelection = computerSelection;
+    this.human = new Player("Human", "🙋🏼‍♀️");
+    this.computer = new Player("Computer", "💻");
+    this.humanDecision = humanDecision;
+    this.computerDecision = computerDecision;
     this.isTie = false;
     this.winner = winner;
   }
-  getRandomCharacter() {
-    var index = Math.floor(Math.random() * this.characters.length);
-    this.computerSelection = this.charaters[index];
-  }
+
   chooseGame() {
     if (this.type === "Classic") {
       this.characters = ["rock", "paper", "scissors"];
@@ -22,6 +19,7 @@ class Game {
       playAdvancedGame();
     }
   }
+
   tieGame() {
     if (this.humanSelection === this.computerSelection) {
       return true;

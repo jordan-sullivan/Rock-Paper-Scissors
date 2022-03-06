@@ -5,21 +5,32 @@ var game = new Game();
 var rulesSection = document.querySelector(".rules-section");
 var classicRulesButton = document.querySelector(".classic-rules");
 var advancedRulesButton = document.querySelector(".advanced-rules");
-var chooseSelectionTitle = document.querySelector(".choose-competitor");
+var chooseSelectionTitle = document.querySelector(".choose-selection");
 var chooseGameTitle = document.querySelector(".choose-game");
 var charactersClassic = document.querySelector(".characters-classic");
 var charactersAdvanced = document.querySelector(".characters-advanced");
 var changeGameButton = document.querySelector(".change-game-button");
+var computerDecision = document.getElementById("computerDecision");
+var humanDecision = document.getElementById("humanDecision");
+var result = document.getElementById("result");
 
 //----------Event Listeners----------
 classicRulesButton.addEventListener("click", goToClassicGame);
 advancedRulesButton.addEventListener("click", goToAdvancedGame);
 changeGameButton.addEventListener("click", returnToHomePage);
 charactersClassic.addEventListener("click", function (event) {
-  takeTurn(event);
+  humansSelection = event.target.id;
+  humanDecision.innerHTML = humansSelection;
+  getRandomCharacter();
 });
 
 //----------Functions----------
+
+function getRandomCharacter() {
+  var randomCharacter = Math.floor(Math.random() * charactersClassic.length);
+  console.log(randomCharacter);
+}
+
 function goToClassicGame() {
   viewElement(chooseSelectionTitle);
   hideElement(chooseGameTitle);
@@ -36,7 +47,7 @@ function returnToHomePage() {
   hideElement(charactersClassic);
   hideElement(charactersAdvanced);
   viewElement(rulesSection);
-  hideElement(chooseCompetitorTitle);
+  hideElement(chooseSelectionTitle);
   viewElement(chooseGameTitle);
 }
 
