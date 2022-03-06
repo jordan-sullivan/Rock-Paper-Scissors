@@ -14,7 +14,6 @@ class Player {
     }
   }
 }
-
 var player = new Player({
   name: "Human",
   token: "",

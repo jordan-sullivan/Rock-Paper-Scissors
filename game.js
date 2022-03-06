@@ -19,41 +19,6 @@ class Game {
       playAdvancedGame();
     }
   }
-
-  tieGame() {
-    if (this.humanSelection === this.computerSelection) {
-      return true;
-    }
-  }
-
-  playGame() {
-    if (tieGame()) {
-      return false;
-    } else if (
-      (this.humanSelection === "rock" &&
-        this.computerSelection === "scissors") ||
-      (this.humanSelection === "paper" && this.computerSelection === "rock") ||
-      (this.humanSelection === "scissors" &&
-        this.computerSelection === "paper") ||
-      (this.humanSelection === "rock" &&
-        this.computerSelection === "unicorn") ||
-      (this.humanSelection === "paper" &&
-        this.computerSelection === "dolphin") ||
-      (this.humanSelection === "scissors" &&
-        this.computerSelection === "unicorn") ||
-      (this.humanSelection === "unicorn" &&
-        this.computerSelection === "paper") ||
-      (this.humanSelection === "unicorn" &&
-        this.computerSelection === "dolphin") ||
-      (this.humanSelection === "dolphin" &&
-        this.computerSelection === "scissors") ||
-      (this.humanSelection === "dolphin" && this.computerSelection === "rock")
-    ) {
-      this.human.wins += 1;
-    } else {
-      this.computer.wins += 1;
-    }
-  }
 }
 
 //icons created by Freepik - Flaticon
