@@ -1,28 +1,32 @@
 class Player {
-  constructor(player, token, currentSelection) {
-    this.player = name;
-    this.token = token || "PIC";
-    this.currentSelection = "paper";
-    this.winStatus = false;
+  constructor(name, token) {
+    this.name = name;
+    this.token = token;
     this.wins = 0;
+
+    this.currentSelection;
     this.gameType = "Classic";
     this.characters = ["rock", "paper", "scissors"];
   }
-  incrementWins() {
-    if (this.winStatus) {
-      this.wins++;
+
+  takeTurn(event) {
+    //log crrent selection in here instead
+    if (event.target.id === "rock") {
+      this.currentSelection = "rock";
+    } else if (event.target.id === "paper") {
+      this.currentSelection = "paper";
+    } else if (event.target.id === "scissors") {
+      this.currentSelection = "scissors";
     }
+    // }
+    // incrementWins() {
+    //   if (this.winStatus) {
+    //     this.wins++;
+    //   }
+    // }
   }
 }
-var player = new Player({
-  name: "Human",
-  token: "",
-  currentSelection: "paper",
-  winStatus: false,
-  wins: 0,
-  gameType: "Classic",
-  characters: ["rock", "paper", "scissors"],
-});
+
 //console.log(player);
 //should be able to take a turn by clicking on  an image. image will store to current.selection.
 // var human = new Player("Human", wins);
@@ -46,4 +50,6 @@ var player = new Player({
 //4) logic conditional decides winner . if human wins, display message, increment , and refresh game after timer
 //5) winner displayed on page, a function with several conditionls runs to see whos is the winner, winner is announced on screen, Maybe Announcement on page could remind that paper covers rock for example.
 //6) counter for winner gets incremented by one. Repeat
-//Q-
+//Q-saveWinsToStorage - only necessary if you choose the localStorage extension
+//retrieveWinsFromStorage - only necessary if you choose the localStorage extension
+//takeTurn
