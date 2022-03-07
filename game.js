@@ -1,17 +1,11 @@
 class Game {
   constructor(type) {
     this.type = type;
-    //this.classicChoices = ["rock", "paper", "scissors"];
-    //this.advancedChoices = ["rock", "paper", "scissors", "unicorn" , "dolphin"]
     this.characters = [];
-    //this.players = [human, computer];
-
     this.human = new Player("Human", "🙋🏼‍♀️");
     this.computer = new Player("Computer", "💻");
     this.humanDecision = humanDecision;
     this.computerDecision = computerDecision;
-    // ^^
-    this.isTie = false;
     this.winner;
   }
   getComputerChoice(type) {
@@ -20,7 +14,6 @@ class Game {
     ];
     console.log("c= " + computerChoice);
   }
-  //reassign from take turn to current decision
   updatePlayerChoices() {
     this.humanDecision = this.human.currentSelection;
   }
@@ -56,7 +49,6 @@ class Game {
     } else if (this.type === "Advanced") {
       this.characters = ["rock", "paper", "scissors", "dolphin", "unicorn"];
     }
-
-    //icons created by Freepik - Flaticon
   }
 }
+//icons created by Freepik - Flaticon

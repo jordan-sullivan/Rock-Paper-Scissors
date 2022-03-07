@@ -1,7 +1,5 @@
 //----------Global Variables----------
-var game;
-//var human = new Player();
-//var computer = new Player();
+var game = new Game();
 var choices = ["rock", "paper", "scissors"];
 
 // ----------Query Selectors----------
