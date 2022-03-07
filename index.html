@@ -26,13 +26,13 @@
         <h2 class="result hidden" id="result">Result here</h2>
       </header>
       <section class="rules-section">
-        <button class="rules-buttons classic-rules">
+        <button class="rules-buttons classic-rules" id="charactersClassic">
           <h4>Classic Rules</h4>
           <p>Rock: smashes Scissors</p>
           <p>Paper: covers Rock</p>
           <p>Scissors: cut paper</p>
         </button>
-        <button class="rules-buttons advanced-rules">
+        <button class="rules-buttons advanced-rules" id="charactersAdvanced">
           <h4>Advanced Rules</h4>
           <p>Rock: smashes Scissors, traps Unicorn</p>
           <p>Paper: covers Rock, pollutes Dolphin home</p>
@@ -48,21 +48,21 @@
           id="rock"
           data="classic advanced"
           src="./icons/ring.png"
-          alt="diamond ring icon"
+          alt="diamond ring icon, a symbol for rock"
         />
         <img
           class="classic-character-image"
           id="paper"
           data="classic advanced"
           src="./icons/paper-plane.png"
-          alt="paper icon"
+          alt="paper airplane icon"
         />
         <img
           class="classic-character-image"
           id="scissors"
           data="classic advanced"
           src="./icons/scissors.png"
-          alt="scissors
+          alt="pair of scissors
         icon"
         />
       </section>
@@ -71,12 +71,14 @@
         <img
           class="advanced-character-image"
           id="dolphin"
+          data="advanced"
           src="./icons/dolphin.png"
           alt="Dolphin icon"
         />
         <img
           class="advanced-character-image"
           id="unicorn"
+          data="advanced"
           src="./icons/unicorn.png"
           alt="Unicorn
         icon"
