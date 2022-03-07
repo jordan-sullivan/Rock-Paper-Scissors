@@ -5,8 +5,8 @@ var game = new Game();
 // ----------Query Selectors----------
 var rulesSection = document.querySelector(".rules-section");
 var rulesButtons = document.querySelector(".rules-buttons");
-//var classicRulesButton = document.querySelector(".classic-rules");
-//var advancedRulesButton = document.querySelector(".advanced-rules");
+var classicRulesButton = document.querySelector(".classic-rules");
+var advancedRulesButton = document.querySelector(".advanced-rules");
 var chooseSelectionTitle = document.querySelector(".choose-selection");
 var chooseGameTitle = document.querySelector(".choose-game");
 var charactersClassic = document.querySelector(".characters-classic");
@@ -17,13 +17,11 @@ var humanDecision = document.getElementById("humanDecision");
 var result = document.querySelector(".result");
 
 //----------Event Listeners----------
-rulesButtons.addEventListener("click", evaluateGameChoice);
-//classicRulesButton.addEventListener("click", evaluateGameChoice);
-//advancedRulesButton.addEventListener("click", evaluateGameChoice);
+classicRulesButton.addEventListener("click", goToClassicGame);
+advancedRulesButton.addEventListener("click", goToAdvancedGame);
 changeGameButton.addEventListener("click", returnToHomePage);
-//console.log(charactersClassic, "cc");
 charactersClassic.addEventListener("click", function (event) {
-  //console.log("GAME", game);
+  console.log(" 26 GAME", game);
   humanChoice = event.target.id;
   humanDecision.innerHTML = humanChoice;
   console.log("h decision classic= ", humanChoice);
@@ -33,6 +31,7 @@ charactersClassic.addEventListener("click", function (event) {
   game.determineWinner();
 });
 charactersAdvanced.addEventListener("click", function (event) {
+  humanChoice = event.target.id;
   console.log("h decision, advanced= ", humanChoice);
   game.human.takeTurn(event);
   game.getComputerChoice();
@@ -42,36 +41,42 @@ charactersAdvanced.addEventListener("click", function (event) {
 
 //----------Functions----------
 
-function evaluateGameChoice() {
-  //console.log(event.target);
-  //event.preventDefault;
-  //console.log("EVENTTARGETID", event.target.id);
-  var classicButton = event.target.closest("#charactersClassic");
-  var advancedButton = event.target.closest("charactersAdvanced");
-  //console.log(advancedButton, "AdvancedButton");
-  if (classicButton.id === "charactersClassic") {
-    game = new Game("Classic");
-    goToClassicGame();
-  } else if (advancedButton.id === "#charactersAdvanced") {
-    //console.log(advancedButton.id);
-    game = new Game("Advanced");
-    //console.log(game, " advanced Game instanciated");
-    goToAdvancedGame();
-  }
-  game.chooseCharacters();
-}
+// function evaluateGameChoice() {
+//   //event.preventDefault;
+//   //console.log("EVENTTARGETID", event.target.id);
+//   var classicButton = event.target.closest("#charactersClassic");
+//   var advancedButton = event.target.closest("#charactersAdvanced");
+//   //console.log(classicButton, "class");
+//   //console.log(advancedButton.id, "AdvancedButtonID");
+//   //classicButton.id !== null &&
+//   if (classicButton.id === "charactersClassic") {
+//     game = new Game("Classic");
+//     goToClassicGame();
+//   }
+//   if (advancedButton.id === "charactersAdvanced") {
+//     //console.log("advancedbuttonID", advancedButton.id);
+//     game = new Game("Advanced");
+//     //console.log(game, " advanced Game instanciated");
+//     goToAdvancedGame();
+//   }
+//   game.chooseCharacters();
+// }
 
 function goToClassicGame() {
+  game.type = "Classic";
   viewElement(chooseSelectionTitle);
   hideElement(chooseGameTitle);
   hideElement(rulesSection);
   viewElement(charactersClassic);
   viewElement(changeGameButton);
+  game.chooseCharacters();
 }
 
 function goToAdvancedGame() {
+  game.type = "Advanced";
   goToClassicGame();
   viewElement(charactersAdvanced);
+  game.chooseCharacters();
 }
 
 function returnToHomePage() {
