@@ -10,6 +10,7 @@ class Player {
   }
 
   takeTurn(event) {
+    console.log("take turn", event);
     if (event.target.id === "rock") {
       this.currentSelection = "rock";
     } else if (event.target.id === "paper") {

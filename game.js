@@ -8,11 +8,21 @@ class Game {
     this.computerDecision = computerDecision;
     this.winner;
   }
-  getComputerChoice(type) {
+  chooseCharacters() {
+    if (this.type === "Classic") {
+      this.characters = ["rock", "paper", "scissors"];
+    } else if (this.type === "Advanced") {
+      this.characters = ["rock", "paper", "scissors", "dolphin", "unicorn"];
+    }
+  }
+
+  getComputerChoice() {
+    console.log(this.characters);
+    console.log(Math.floor(Math.random() * this.characters.length));
     this.computerDecision = this.characters[
       Math.floor(Math.random() * this.characters.length)
     ];
-    console.log("c= " + computerChoice);
+    console.log("c= " + this.computerDecision);
   }
   updatePlayerChoices() {
     this.humanDecision = this.human.currentSelection;
@@ -37,17 +47,10 @@ class Game {
       (this.humanDecision === "dolphin" && this.computerDecision === "rock")
     ) {
       this.human.wins += 1;
-      result = "Human Wins!";
+      result = "Human Wins!"; //in HTML- heading 2
     } else {
       this.computer.wins += 1;
       result = "Computer wins!";
-    }
-  }
-  chooseGame() {
-    if (this.type === "Classic") {
-      this.characters = ["rock", "paper", "scissors"];
-    } else if (this.type === "Advanced") {
-      this.characters = ["rock", "paper", "scissors", "dolphin", "unicorn"];
     }
   }
 }
