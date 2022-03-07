@@ -29,7 +29,7 @@ class Game {
   }
   determineWinner() {
     if (this.humanDecision === this.computerDecision) {
-      return "It's a tie!";
+      result.innerText = "🤷🏻 TIE GAME! 🤷🏼‍♂️";
     } else if (
       (this.humanDecision === "rock" && this.computerDecision === "scissors") ||
       (this.humanDecision === "paper" && this.computerDecision === "rock") ||
@@ -47,11 +47,15 @@ class Game {
       (this.humanDecision === "dolphin" && this.computerDecision === "rock")
     ) {
       this.human.wins += 1;
-      result = "Human Wins!"; //in HTML- heading 2
+      result.innerText = "👏 HUMAN WINS! 👏";
     } else {
       this.computer.wins += 1;
-      result = "Computer wins!";
+      result.innerText = "😈 COMPUTER WINS THIS ROUND! 😈";
     }
+    console.log(this.human.wins, "human wins");
+    console.log(this.computer.wins, "computer wins");
+
+    console.log(result, "result");
   }
 }
 //icons created by Freepik - Flaticon
