@@ -54,7 +54,6 @@ class Game {
     }
     console.log(this.human.wins, "human wins");
     console.log(this.computer.wins, "computer wins");
-
     console.log(result, "result");
   }
 }

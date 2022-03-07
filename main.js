@@ -14,19 +14,26 @@ var charactersAdvanced = document.querySelector(".characters-advanced");
 var changeGameButton = document.querySelector(".change-game-button");
 var computerDecision = document.getElementById("computerDecision");
 var humanDecision = document.getElementById("humanDecision");
-var result = document.getElementById("result");
+var result = document.querySelector(".result");
 
 //----------Event Listeners----------
 rulesButtons.addEventListener("click", evaluateGameChoice);
 //classicRulesButton.addEventListener("click", evaluateGameChoice);
 //advancedRulesButton.addEventListener("click", evaluateGameChoice);
 changeGameButton.addEventListener("click", returnToHomePage);
-console.log(charactersClassic, "cc");
+//console.log(charactersClassic, "cc");
 charactersClassic.addEventListener("click", function (event) {
   console.log("GAME", game);
   humanChoice = event.target.id;
   humanDecision.innerHTML = humanChoice;
-  console.log("h= " + humanChoice);
+  console.log("h classic= " + humanChoice);
+  game.human.takeTurn(event);
+  game.getComputerChoice();
+  game.updatePlayerChoices();
+  game.determineWinner();
+});
+charactersAdvanced.addEventListener("click", function (event) {
+  console.log("h, advanced= " + humanChoice);
   game.human.takeTurn(event);
   game.getComputerChoice();
   game.updatePlayerChoices();
@@ -36,27 +43,23 @@ charactersClassic.addEventListener("click", function (event) {
 //----------Functions----------
 
 function evaluateGameChoice() {
-  console.log(event.target);
-  event.preventDefault;
-  console.log("EVENTTARGETID", event.target.id);
+  //console.log(event.target);
+  //event.preventDefault;
+  //console.log("EVENTTARGETID", event.target.id);
   var classicButton = event.target.closest("#charactersClassic");
-  //bubbling up to closest parent with id towards doc.
+  var advancedButton = event.target.closest("charactersAdvanced");
+  //console.log(advancedButton, "AdvancedButton");
   if (classicButton.id === "charactersClassic") {
     game = new Game("Classic");
-    console.log(game, "Game instanciated");
     goToClassicGame();
-  } else if (event.target.id === "charactersAdvanced") {
+  } else if (advancedButton.id === "#charactersAdvanced") {
+    //console.log(advancedButton.id);
     game = new Game("Advanced");
+    //console.log(game, " advanced Game instanciated");
     goToAdvancedGame();
   }
   game.chooseCharacters();
 }
-// function getComputerChoice() {
-//   var computerChoice =
-//     classicChoices[Math.floor(Math.random() * classicChoices.length)];
-//   computerDecision.innerHTML = computerChoice;
-//
-// }
 
 function goToClassicGame() {
   viewElement(chooseSelectionTitle);
@@ -64,15 +67,15 @@ function goToClassicGame() {
   hideElement(rulesSection);
   viewElement(charactersClassic);
   viewElement(changeGameButton);
-  //evaluateGameChoice();
-  //this.game.type === "Classic"
 }
+
 function goToAdvancedGame() {
   goToClassicGame();
   viewElement(charactersAdvanced);
-  //evaluateGameChoice();
 }
+
 function returnToHomePage() {
+  event.preventDefault;
   hideElement(changeGameButton);
   hideElement(charactersClassic);
   hideElement(charactersAdvanced);
