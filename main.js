@@ -23,17 +23,17 @@ rulesButtons.addEventListener("click", evaluateGameChoice);
 changeGameButton.addEventListener("click", returnToHomePage);
 //console.log(charactersClassic, "cc");
 charactersClassic.addEventListener("click", function (event) {
-  console.log("GAME", game);
+  //console.log("GAME", game);
   humanChoice = event.target.id;
   humanDecision.innerHTML = humanChoice;
-  console.log("h classic= " + humanChoice);
+  console.log("h decision classic= ", humanChoice);
   game.human.takeTurn(event);
   game.getComputerChoice();
   game.updatePlayerChoices();
   game.determineWinner();
 });
 charactersAdvanced.addEventListener("click", function (event) {
-  console.log("h, advanced= " + humanChoice);
+  console.log("h decision, advanced= ", humanChoice);
   game.human.takeTurn(event);
   game.getComputerChoice();
   game.updatePlayerChoices();

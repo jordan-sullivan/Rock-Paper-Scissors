@@ -17,19 +17,18 @@ class Game {
   }
 
   getComputerChoice() {
-    console.log(this.characters);
-    console.log(Math.floor(Math.random() * this.characters.length));
     this.computerDecision = this.characters[
       Math.floor(Math.random() * this.characters.length)
     ];
-    console.log("c= " + this.computerDecision);
+    console.log("computer descision= ", this.computerDecision);
   }
   updatePlayerChoices() {
     this.humanDecision = this.human.currentSelection;
   }
+
   determineWinner() {
     if (this.humanDecision === this.computerDecision) {
-      result.innerText = "🤷🏻 TIE GAME! 🤷🏼‍♂️";
+      this.winner = null;
     } else if (
       (this.humanDecision === "rock" && this.computerDecision === "scissors") ||
       (this.humanDecision === "paper" && this.computerDecision === "rock") ||
@@ -46,15 +45,27 @@ class Game {
         this.computerDecision === "scissors") ||
       (this.humanDecision === "dolphin" && this.computerDecision === "rock")
     ) {
-      this.human.wins += 1;
-      result.innerText = "👏 HUMAN WINS! 👏";
+      this.winner = "Human";
     } else {
-      this.computer.wins += 1;
-      result.innerText = "😈 COMPUTER WINS THIS ROUND! 😈";
+      this.winner = "Computer";
     }
-    console.log(this.human.wins, "human wins");
-    console.log(this.computer.wins, "computer wins");
-    console.log(result, "result");
+    this.displayWinner();
+  }
+
+  displayWinner() {
+    if (this.winner === "Human") {
+      this.human.wins += 1;
+      result.innerText = " 🙋🏼‍♀️ HUMAN WINS! 🙋🏼‍♀️ ";
+    } else if (this.winner === "Computer") {
+      this.computer.wins += 1;
+      result.innerText = " 🖥 COMPUTER WINS! 🖥 ";
+    } else {
+      this.winner = null;
+      result.innerText = " 🪢 TIE GAME! 🪢 ";
+    }
+    console.log(this.human.wins, " 80 / human wins");
+    console.log(this.computer.wins, "81 / computer wins");
+    console.log(result, "82 / result");
   }
 }
 //icons created by Freepik - Flaticon
