@@ -17,12 +17,10 @@ class Player {
       this.currentSelection = "paper";
     } else if (event.target.id === "scissors") {
       this.currentSelection = "scissors";
+    } else if (event.target.id === "unicorn") {
+      this.currentSelection = "unicorn";
+    } else if (event.target.id === "dolphin") {
+      this.currentSelection = "dolphin";
     }
-    // }
-    // incrementWins() {
-    //   if (this.winStatus) {
-    //     this.wins++;
-    //   }
-    // }
   }
 }

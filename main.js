@@ -1,6 +1,5 @@
 //----------Global Variables----------
 var game = new Game();
-//var choices = ["rock", "paper", "scissors"];
 
 // ----------Query Selectors----------
 var rulesSection = document.querySelector(".rules-section");
@@ -41,27 +40,6 @@ charactersAdvanced.addEventListener("click", function (event) {
 
 //----------Functions----------
 
-// function evaluateGameChoice() {
-//   //event.preventDefault;
-//   //console.log("EVENTTARGETID", event.target.id);
-//   var classicButton = event.target.closest("#charactersClassic");
-//   var advancedButton = event.target.closest("#charactersAdvanced");
-//   //console.log(classicButton, "class");
-//   //console.log(advancedButton.id, "AdvancedButtonID");
-//   //classicButton.id !== null &&
-//   if (classicButton.id === "charactersClassic") {
-//     game = new Game("Classic");
-//     goToClassicGame();
-//   }
-//   if (advancedButton.id === "charactersAdvanced") {
-//     //console.log("advancedbuttonID", advancedButton.id);
-//     game = new Game("Advanced");
-//     //console.log(game, " advanced Game instanciated");
-//     goToAdvancedGame();
-//   }
-//   game.chooseCharacters();
-// }
-
 function goToClassicGame() {
   game.type = "Classic";
   viewElement(chooseSelectionTitle);
@@ -74,7 +52,13 @@ function goToClassicGame() {
 
 function goToAdvancedGame() {
   game.type = "Advanced";
-  goToClassicGame();
+  viewElement(chooseSelectionTitle);
+  hideElement(chooseGameTitle);
+  hideElement(rulesSection);
+  viewElement(charactersClassic);
+  viewElement(changeGameButton);
+  //goToClassicGame();
+  //is there a way to consolodate without declaring this game as classic?
   viewElement(charactersAdvanced);
   game.chooseCharacters();
 }

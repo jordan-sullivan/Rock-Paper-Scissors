@@ -8,6 +8,7 @@ class Game {
     this.computerDecision = computerDecision;
     this.winner;
   }
+
   chooseCharacters() {
     if (this.type === "Classic") {
       this.characters = ["rock", "paper", "scissors"];
@@ -22,13 +23,14 @@ class Game {
     ];
     console.log("computer descision= ", this.computerDecision);
   }
+
   updatePlayerChoices() {
     this.humanDecision = this.human.currentSelection;
   }
 
   determineWinner() {
     if (this.humanDecision === this.computerDecision) {
-      this.winner = null;
+      this.winner = "tie";
     } else if (
       (this.humanDecision === "rock" && this.computerDecision === "scissors") ||
       (this.humanDecision === "paper" && this.computerDecision === "rock") ||
@@ -60,7 +62,7 @@ class Game {
       this.computer.wins += 1;
       result.innerText = " 🖥 COMPUTER WINS! 🖥 ";
     } else {
-      this.winner = null;
+      this.winner = "tie";
       result.innerText = " 🪢 TIE GAME! 🪢 ";
     }
     console.log(this.human.wins, " 80 / human wins");
