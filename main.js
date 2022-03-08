@@ -6,7 +6,6 @@ var rulesSection = document.querySelector(".rules-section");
 var rulesButtons = document.querySelector(".rules-buttons");
 var classicRulesButton = document.querySelector(".classic-rules");
 var advancedRulesButton = document.querySelector(".advanced-rules");
-var resetScoreButton = document.querySelector(".reset-score-button");
 var chooseSelectionTitle = document.querySelector(".choose-selection");
 var chooseGameTitle = document.querySelector(".choose-game");
 var displayResults = document.querySelector(".display-results");
@@ -43,13 +42,11 @@ charactersAdvanced.addEventListener("click", function (event) {
 //----------Functions----------
 
 function returnToGame() {
-  //displayResults.innerHTML = "";
   if (game.type === "Classic") {
     setTimeout(goToClassicGame, 2500);
   } else {
     setTimeout(goToAdvancedGame, 2500);
   }
-  //hideElement(displayResults);
 }
 
 function goToClassicGame() {
@@ -61,7 +58,6 @@ function goToClassicGame() {
   hideElement(rulesSection);
   viewElement(charactersClassic);
   viewElement(changeGameButton);
-  viewElement(resetScoreButton);
   game.chooseCharacters();
 }
 
@@ -75,7 +71,6 @@ function goToAdvancedGame() {
   viewElement(charactersClassic);
   viewElement(changeGameButton);
   viewElement(charactersAdvanced);
-  viewElement(resetScoreButton);
   game.chooseCharacters();
 }
 
@@ -87,14 +82,13 @@ function viewPicks(humanDecision, computerDecision) {
 
   displayResults.innerHTML = "";
   displayResults.innerHTML += `
-  <article class="humanDecision" id="humanDecision">
+  <section class="pick humanDecision" id="humanDecision">
       <img id=${humanDecision} src='./icons/${humanDecision}.png' alt='${humanDecision} icon'>
-    </article>
-    <article class="computerDecision" id="computerDecision">
+    </section>
+    <section class="pick computerDecision" id="computerDecision">
       <img id=${computerDecision} src='./icons/${computerDecision}.png' alt='${computerDecision} icon'>
-    </article>
+    </section>
   `;
-  //setTimeout(displayWinner, 1000);
   console.log(humanDecision);
   console.log(computerDecision);
   displayWinner();
@@ -102,17 +96,13 @@ function viewPicks(humanDecision, computerDecision) {
 
 function displayWinner() {
   viewElement(result);
-  //hideElement(displayResults);
-  //viewPicks();
   if (game.winner === "Human") {
     game.human.wins += 1;
     result.innerText = " 🙋🏼‍♀️ HUMAN WINS! 🙋🏼‍♀️ ";
-    //humanPick.innerHTML = game.human.currentSelection;
     humanWins.innerHTML = "wins: " + game.human.wins;
   } else if (game.winner === "Computer") {
     game.computer.wins += 1;
     result.innerText = " 🖥 COMPUTER WINS! 🖥 ";
-    //display computer's icon here
     computerWins.innerHTML = "wins: " + game.computer.wins;
   } else {
     game.winner = "tie";
@@ -120,8 +110,6 @@ function displayWinner() {
   }
   hideElement(charactersClassic);
   hideElement(charactersAdvanced);
-  //viewElement(this.human.currentSelection);
-  //viewElement(this.computer.currentSelection);
   returnToGame();
 }
 
@@ -142,8 +130,3 @@ function viewElement(element) {
 function hideElement(element) {
   element.classList.add("hidden");
 }
-// function resetScore() {
-//   person.wins = 0;
-//   // humanWins.innerHTML = "wins: " + human.wins;
-//   // computerWins.innerHTML = "wins: " + computer.wins;
-// }

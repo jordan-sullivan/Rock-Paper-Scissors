@@ -1,5 +1,5 @@
 * {
-  border: 2px solid black;
+  caret-color: rgba(0, 0, 0, 0);
 }
 /* -----General----- */
 
@@ -15,22 +15,19 @@ body {
 div {
   display: flex;
   justify-content: center;
-  margin-top: 70%;
 }
 .player-image {
   height: 15%;
   width: 45%;
 }
-.classic-character-image {
-  height: 10%;
-  width: 20%;
-  padding-top: 20px;
-}
+
 .advanced-character-image {
-  height: 10%;
-  width: 20%;
   padding-left: 70px;
   padding-right: 55px;
+}
+.icon {
+  height: 10%;
+  width: 20%;
   padding-top: 20px;
 }
 
@@ -50,11 +47,11 @@ div {
 button:hover {
   transform: scale(1.1);
 }
-.display-results {
+/* .display-results {
   display: flex;
   justify-content: center;
   margin-top: 70%;
-}
+} */
 /* -----Both Asides----- */
 aside {
   background-color: #a9ddeb;
@@ -155,13 +152,20 @@ p {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.characters-advanced {
+.characters-advanced,
+.display-results {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-
+.pick {
+  display: flex;
+  justify-content: space-between;
+  height: 400px;
+  width: 400px;
+  padding: 70px;
+}
 /* -----Right Aside----- */
 .right-aside {
   display: flex;
