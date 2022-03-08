@@ -55,6 +55,8 @@ class Game {
   }
 
   displayWinner() {
+    viewElement(result);
+    hideElement(chooseSelectionTitle);
     if (this.winner === "Human") {
       this.human.wins += 1;
       result.innerText = " 🙋🏼‍♀️ HUMAN WINS! 🙋🏼‍♀️ ";
@@ -70,6 +72,7 @@ class Game {
     console.log(this.human.wins, " 80 / human wins");
     console.log(this.computer.wins, "81 / computer wins");
     console.log(result, "82 / result");
+    getBackJack();
   }
 }
 //icons created by Freepik - Flaticon

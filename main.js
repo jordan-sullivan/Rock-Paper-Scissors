@@ -42,8 +42,17 @@ charactersAdvanced.addEventListener("click", function (event) {
 
 //----------Functions----------
 
+function getBackJack() {
+  if (game.type === "Classic") {
+    setTimeout(goToClassicGame, 2000);
+  } else {
+    setTimeout(goToAdvancedGame, 2000);
+  }
+}
+
 function goToClassicGame() {
   game.type = "Classic";
+  hideElement(result);
   viewElement(chooseSelectionTitle);
   hideElement(chooseGameTitle);
   hideElement(rulesSection);
@@ -54,6 +63,7 @@ function goToClassicGame() {
 
 function goToAdvancedGame() {
   game.type = "Advanced";
+  hideElement(result);
   viewElement(chooseSelectionTitle);
   hideElement(chooseGameTitle);
   hideElement(rulesSection);
