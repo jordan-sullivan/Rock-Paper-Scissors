@@ -10,7 +10,6 @@ class Player {
   }
 
   takeTurn(event) {
-    console.log("take turn", event);
     this.currentSelection = event.target.id;
   }
 }

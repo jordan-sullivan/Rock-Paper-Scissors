@@ -9,7 +9,6 @@ var advancedRulesButton = document.querySelector(".advanced-rules");
 var chooseSelectionTitle = document.querySelector(".choose-selection");
 var chooseGameTitle = document.querySelector(".choose-game");
 var displayResults = document.querySelector(".display-results");
-
 var charactersClassic = document.querySelector(".characters-classic");
 var charactersAdvanced = document.querySelector(".characters-advanced");
 var icon = document.querySelector(".icon");
@@ -26,20 +25,17 @@ var computerPick = document.querySelector(".computer-pick");
 classicRulesButton.addEventListener("click", goToClassicGame);
 advancedRulesButton.addEventListener("click", goToAdvancedGame);
 changeGameButton.addEventListener("click", returnToHomePage);
-charactersClassic.addEventListener("click", function (event) {
-  game.human.takeTurn(event);
-  game.getComputerChoice();
-  game.updatePlayerChoices();
-  game.determineWinner();
-});
-charactersAdvanced.addEventListener("click", function (event) {
-  game.human.takeTurn(event);
-  game.getComputerChoice();
-  game.updatePlayerChoices();
-  game.determineWinner();
-});
+charactersClassic.addEventListener("click", playGame);
+charactersAdvanced.addEventListener("click", playGame);
 
 //----------Functions----------
+
+function playGame() {
+  game.human.takeTurn(event);
+  game.getComputerChoice();
+  game.updatePlayerChoices();
+  game.determineWinner();
+}
 
 function returnToGame() {
   if (game.type === "Classic") {
@@ -79,7 +75,6 @@ function viewPicks(humanDecision, computerDecision) {
   viewElement(displayResults);
   hideElement(charactersClassic);
   hideElement(charactersAdvanced);
-
   displayResults.innerHTML = "";
   displayResults.innerHTML += `
   <section class="pick humanDecision" id="humanDecision">
@@ -89,8 +84,6 @@ function viewPicks(humanDecision, computerDecision) {
       <img id=${computerDecision} src='./icons/${computerDecision}.png' alt='${computerDecision} icon'>
     </section>
   `;
-  console.log(humanDecision);
-  console.log(computerDecision);
   displayWinner();
 }
 

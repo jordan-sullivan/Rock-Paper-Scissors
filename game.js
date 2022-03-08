@@ -19,7 +19,6 @@ class Game {
     this.computerDecision = this.characters[
       Math.floor(Math.random() * this.characters.length)
     ];
-    console.log("computer descision= ", this.computerDecision);
   }
   updatePlayerChoices() {
     this.humanDecision = this.human.currentSelection;
