@@ -49,4 +49,3 @@ class Game {
     viewPicks(this.humanDecision, this.computerDecision);
   }
 }
-//icons created by Freepik - Flaticon

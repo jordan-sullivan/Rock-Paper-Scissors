@@ -3,7 +3,6 @@ class Player {
     this.name = name;
     this.token = token;
     this.wins = 0;
-
     this.currentSelection;
     this.gameType = "Classic";
     this.characters = ["rock", "paper", "scissors"];
