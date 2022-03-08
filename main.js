@@ -3,7 +3,6 @@ var game = new Game();
 
 // ----------Query Selectors----------
 var rulesSection = document.querySelector(".rules-section");
-var rulesButtons = document.querySelector(".rules-buttons");
 var classicRulesButton = document.querySelector(".classic-rules");
 var advancedRulesButton = document.querySelector(".advanced-rules");
 var chooseSelectionTitle = document.querySelector(".choose-selection");
@@ -18,8 +17,6 @@ var humanDecision = document.getElementById("humanDecision");
 var result = document.querySelector(".result");
 var computerWins = document.querySelector(".computer-wins");
 var humanWins = document.querySelector(".human-wins");
-var humanPick = document.querySelector(".human-pick");
-var computerPick = document.querySelector(".computer-pick");
 
 //----------Event Listeners----------
 classicRulesButton.addEventListener("click", goToClassicGame);
