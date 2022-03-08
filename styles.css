@@ -33,6 +33,7 @@ div {
   padding-right: 55px;
   padding-top: 20px;
 }
+
 .icon:hover {
   cursor: pointer;
   background-image: linear-gradient(
