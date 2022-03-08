@@ -3,24 +3,12 @@ class Player {
     this.name = name;
     this.token = token;
     this.wins = 0;
-
     this.currentSelection;
     this.gameType = "Classic";
     this.characters = ["rock", "paper", "scissors"];
   }
 
   takeTurn(event) {
-    console.log("take turn", event);
-    if (event.target.id === "rock") {
-      this.currentSelection = "rock";
-    } else if (event.target.id === "paper") {
-      this.currentSelection = "paper";
-    } else if (event.target.id === "scissors") {
-      this.currentSelection = "scissors";
-    } else if (event.target.id === "unicorn") {
-      this.currentSelection = "unicorn";
-    } else if (event.target.id === "dolphin") {
-      this.currentSelection = "dolphin";
-    }
+    this.currentSelection = event.target.id;
   }
 }

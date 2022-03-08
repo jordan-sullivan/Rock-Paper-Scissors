@@ -1,47 +1,54 @@
 //----------Global Variables----------
+
 var game = new Game();
 
 // ----------Query Selectors----------
+
 var rulesSection = document.querySelector(".rules-section");
-var rulesButtons = document.querySelector(".rules-buttons");
 var classicRulesButton = document.querySelector(".classic-rules");
 var advancedRulesButton = document.querySelector(".advanced-rules");
 var chooseSelectionTitle = document.querySelector(".choose-selection");
 var chooseGameTitle = document.querySelector(".choose-game");
+var displayResults = document.querySelector(".display-results");
 var charactersClassic = document.querySelector(".characters-classic");
 var charactersAdvanced = document.querySelector(".characters-advanced");
+var icon = document.querySelector(".icon");
 var changeGameButton = document.querySelector(".change-game-button");
 var computerDecision = document.getElementById("computerDecision");
 var humanDecision = document.getElementById("humanDecision");
 var result = document.querySelector(".result");
+var computerWins = document.querySelector(".computer-wins");
+var humanWins = document.querySelector(".human-wins");
 
 //----------Event Listeners----------
+
 classicRulesButton.addEventListener("click", goToClassicGame);
 advancedRulesButton.addEventListener("click", goToAdvancedGame);
 changeGameButton.addEventListener("click", returnToHomePage);
-charactersClassic.addEventListener("click", function (event) {
-  console.log(" 26 GAME", game);
-  humanChoice = event.target.id;
-  humanDecision.innerHTML = humanChoice;
-  console.log("h decision classic= ", humanChoice);
-  game.human.takeTurn(event);
-  game.getComputerChoice();
-  game.updatePlayerChoices();
-  game.determineWinner();
-});
-charactersAdvanced.addEventListener("click", function (event) {
-  humanChoice = event.target.id;
-  console.log("h decision, advanced= ", humanChoice);
-  game.human.takeTurn(event);
-  game.getComputerChoice();
-  game.updatePlayerChoices();
-  game.determineWinner();
-});
+charactersClassic.addEventListener("click", playGame);
+charactersAdvanced.addEventListener("click", playGame);
 
 //----------Functions----------
 
+function playGame() {
+  game.human.takeTurn(event);
+  game.getComputerChoice();
+  game.updatePlayerChoices();
+  game.determineWinner();
+}
+
+function returnToGame() {
+  if (game.type === "Classic") {
+    setTimeout(goToClassicGame, 2500);
+  } else {
+    setTimeout(goToAdvancedGame, 2500);
+  }
+}
+
 function goToClassicGame() {
   game.type = "Classic";
+  hideElement(displayResults);
+  hideElement(result);
   viewElement(chooseSelectionTitle);
   hideElement(chooseGameTitle);
   hideElement(rulesSection);
@@ -52,15 +59,51 @@ function goToClassicGame() {
 
 function goToAdvancedGame() {
   game.type = "Advanced";
+  hideElement(displayResults);
+  hideElement(result);
   viewElement(chooseSelectionTitle);
   hideElement(chooseGameTitle);
   hideElement(rulesSection);
   viewElement(charactersClassic);
   viewElement(changeGameButton);
-  //goToClassicGame();
-  //is there a way to consolodate without declaring this game as classic?
   viewElement(charactersAdvanced);
   game.chooseCharacters();
+}
+
+function viewPicks(humanDecision, computerDecision) {
+  hideElement(chooseSelectionTitle);
+  viewElement(displayResults);
+  hideElement(charactersClassic);
+  hideElement(charactersAdvanced);
+  displayResults.innerHTML = "";
+  displayResults.innerHTML += `
+  <section class="pick humanDecision" id="humanDecision">
+      <img id=${humanDecision} src='./icons/${humanDecision}.png' alt='${humanDecision} icon'>
+    </section>
+    <section class="pick computerDecision" id="computerDecision">
+      <img id=${computerDecision} src='./icons/${computerDecision}.png' alt='${computerDecision} icon'>
+    </section>
+  `;
+  displayWinner();
+}
+
+function displayWinner() {
+  viewElement(result);
+  if (game.winner === "Human") {
+    game.human.wins += 1;
+    result.innerText = " 🙋🏼‍♀️ HUMAN WINS! 🙋🏼‍♀️ ";
+    humanWins.innerHTML = "wins: " + game.human.wins;
+  } else if (game.winner === "Computer") {
+    game.computer.wins += 1;
+    result.innerText = " 🖥 COMPUTER WINS! 🖥 ";
+    computerWins.innerHTML = "wins: " + game.computer.wins;
+  } else {
+    game.winner = "tie";
+    result.innerText = " 🪢 TIE GAME! 🪢 ";
+  }
+  hideElement(charactersClassic);
+  hideElement(charactersAdvanced);
+  returnToGame();
 }
 
 function returnToHomePage() {
