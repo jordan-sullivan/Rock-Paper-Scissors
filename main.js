@@ -1,7 +1,9 @@
 //----------Global Variables----------
+
 var game = new Game();
 
 // ----------Query Selectors----------
+
 var rulesSection = document.querySelector(".rules-section");
 var classicRulesButton = document.querySelector(".classic-rules");
 var advancedRulesButton = document.querySelector(".advanced-rules");
@@ -19,6 +21,7 @@ var computerWins = document.querySelector(".computer-wins");
 var humanWins = document.querySelector(".human-wins");
 
 //----------Event Listeners----------
+
 classicRulesButton.addEventListener("click", goToClassicGame);
 advancedRulesButton.addEventListener("click", goToAdvancedGame);
 changeGameButton.addEventListener("click", returnToHomePage);

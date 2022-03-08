@@ -1,24 +1,25 @@
 * {
   caret-color: rgba(0, 0, 0, 0);
 }
+
 /* -----General----- */
 
 body {
   border: 2px solid ##cc98ed;
-  /* height: 100%;
-  width: 100%;
-  flex-direction: row; */
-  margin: 0%;
   display: flex;
   font-family: Verdana, sans-serif;
+  margin: 0%;
 }
+
 div {
   display: flex;
   justify-content: center;
 }
+
 .change-game-button-div {
   margin-top: 90%;
 }
+
 .player-image {
   height: 15%;
   width: 45%;
@@ -28,14 +29,14 @@ div {
   padding-left: 70px;
   padding-right: 55px;
 }
+
 .icon {
   height: 10%;
-  width: 20%;
   padding-top: 20px;
+  width: 20%;
 }
 
 .icon:hover {
-  cursor: pointer;
   background-image: linear-gradient(
     90deg,
     #00c0ff 0%,
@@ -44,6 +45,7 @@ div {
     #00c0ff 100%
   );
   border-radius: 15%;
+  cursor: pointer;
   transform: scale(1.1);
 }
 
@@ -52,126 +54,138 @@ button:hover {
 }
 
 /* -----Both Asides----- */
+
 aside {
   background-color: #a9ddeb;
   width: 15%;
 }
+
 h3 {
   font-size: 200%;
   font-weight: lighter;
 }
+
 .wins-calculator {
   font-size: 150%;
-  font-weight: normal;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073;
+  font-weight: normal;
 }
 
 /* -----Left Aside----- */
+
 .left-aside {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding-top: 20%;
 }
+
 .change-game-button {
-  height: 60px;
-  width: 190px;
-  font-size: 100%;
-  background-color: #f7b7f1;
-  border-radius: 8%;
-  border-color: #f7b7f1;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  background-color: #f7b7f1;
+  border-color: #f7b7f1;
+  border-radius: 8%;
   cursor: pointer;
+  display: flex;
+  font-size: 100%;
+  height: 60px;
+  justify-content: center;
+  width: 190px;
 }
+
 /* -----Main Center & Home Page----- */
+
 main {
-  height: 100%;
-  width: 70%;
+  align-items: center;
   background-color: #cc98ed;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  height: 100%;
   justify-content: center;
+  width: 70%;
 }
 
 h1 {
+  display: flex;
   font-size: 450%;
   font-weight: bolder;
-  display: flex;
   justify-content: center;
   margin: 10px;
 }
 
 h2 {
+  display: flex;
   font-size: 280%;
   font-weight: lighter;
-  display: flex;
   justify-content: center;
   margin-top: 10%;
 }
+
 .rules-section {
-  height: 70%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
+  display: flex;
+  height: 70%;
+  justify-content: space-evenly;
+  width: 100%;
 }
+
 .rules-buttons {
-  height: 65%;
-  width: 40%;
+  align-items: center;
   background-color: #f7b7f1;
   border-radius: 8%;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  cursor: pointer;
+  height: 65%;
   transition: 100ms;
+  width: 40%;
 }
+
 h4 {
   font-size: 250%;
 }
+
 p {
+  color: purple;
   font-size: 140%;
   font-weight: lighter;
-  color: purple;
   margin: 2%;
 }
+
 /* -----Main Center || Game Page----- */
 
 .characters-classic {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .characters-advanced,
 .display-results {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .pick {
   display: flex;
-  justify-content: space-between;
   height: 400px;
-  width: 400px;
+  justify-content: space-between;
   padding: 70px;
+  width: 400px;
 }
+
 /* -----Right Aside----- */
 .right-aside {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding-top: 20%;
 }
 
 /* -----Hidden----- */
+
 .hidden {
   display: none;
 }
