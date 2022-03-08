@@ -65,7 +65,16 @@ h3 {
 .wins-calculator {
   font-size: 150%;
   font-weight: normal;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073;
 }
+/* .human-pick {
+  height: 15%;
+  width: 45%;
+}
+.computer-pick {
+  height: 15%;
+  width: 45%;
+} */
 /* -----Left Aside----- */
 .left-aside {
   display: flex;
@@ -162,6 +171,19 @@ p {
   justify-content: center;
   align-items: center;
   padding-top: 20%;
+}
+
+.reset-score-button {
+  height: 60px;
+  width: 190px;
+  font-size: 100%;
+  background-color: #f7b7f1;
+  border-radius: 8%;
+  border-color: #f7b7f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 /* -----Hidden----- */

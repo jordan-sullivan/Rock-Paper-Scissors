@@ -69,10 +69,7 @@ class Game {
       this.winner = "tie";
       result.innerText = " 🪢 TIE GAME! 🪢 ";
     }
-    console.log(this.human.wins, " 80 / human wins");
-    console.log(this.computer.wins, "81 / computer wins");
-    console.log(result, "82 / result");
-    getBackJack();
+    returnToGame();
   }
 }
 //icons created by Freepik - Flaticon

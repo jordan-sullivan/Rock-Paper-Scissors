@@ -11,16 +11,12 @@ class Player {
 
   takeTurn(event) {
     console.log("take turn", event);
-    if (event.target.id === "rock") {
-      this.currentSelection = "rock";
-    } else if (event.target.id === "paper") {
-      this.currentSelection = "paper";
-    } else if (event.target.id === "scissors") {
-      this.currentSelection = "scissors";
-    } else if (event.target.id === "unicorn") {
-      this.currentSelection = "unicorn";
-    } else if (event.target.id === "dolphin") {
-      this.currentSelection = "dolphin";
-    }
-  }
+    this.currentSelection = event.target.id;
+    //humanPick.style.content = "url(./icons/scissors.png)";
+    //humanPick.innerText = this.currentSelection;
+    //humanPick.classList.add(this.currentSelection);
+    //`url(./icons/${icon}.png)`;
+    //computerPick.style.content = "url(./icons/paper-plane.png)";
+    //`url(./icons/${icon}.png)`;
+  } //id].style.content = "url(./images/unlocked.png)";
 }
