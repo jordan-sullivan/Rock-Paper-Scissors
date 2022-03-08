@@ -58,9 +58,11 @@ class Game {
     if (this.winner === "Human") {
       this.human.wins += 1;
       result.innerText = " 🙋🏼‍♀️ HUMAN WINS! 🙋🏼‍♀️ ";
+      humanWins.innerHTML = "wins: " + this.human.wins;
     } else if (this.winner === "Computer") {
       this.computer.wins += 1;
       result.innerText = " 🖥 COMPUTER WINS! 🖥 ";
+      computerWins.innerHTML = "wins: " + this.computer.wins;
     } else {
       this.winner = "tie";
       result.innerText = " 🪢 TIE GAME! 🪢 ";

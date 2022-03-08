@@ -14,6 +14,8 @@ var changeGameButton = document.querySelector(".change-game-button");
 var computerDecision = document.getElementById("computerDecision");
 var humanDecision = document.getElementById("humanDecision");
 var result = document.querySelector(".result");
+var computerWins = document.querySelector(".computer-wins");
+var humanWins = document.querySelector(".human-wins");
 
 //----------Event Listeners----------
 classicRulesButton.addEventListener("click", goToClassicGame);
