@@ -8,7 +8,6 @@ class Game {
     this.computerDecision = computerDecision;
     this.winner;
   }
-
   chooseCharacters() {
     if (this.type === "Classic") {
       this.characters = ["rock", "paper", "scissors"];
@@ -16,18 +15,15 @@ class Game {
       this.characters = ["rock", "paper", "scissors", "dolphin", "unicorn"];
     }
   }
-
   getComputerChoice() {
     this.computerDecision = this.characters[
       Math.floor(Math.random() * this.characters.length)
     ];
     console.log("computer descision= ", this.computerDecision);
   }
-
   updatePlayerChoices() {
     this.humanDecision = this.human.currentSelection;
   }
-
   determineWinner() {
     if (this.humanDecision === this.computerDecision) {
       this.winner = "tie";
@@ -51,25 +47,7 @@ class Game {
     } else {
       this.winner = "Computer";
     }
-    this.displayWinner();
-  }
-
-  displayWinner() {
-    viewElement(result);
-    hideElement(chooseSelectionTitle);
-    if (this.winner === "Human") {
-      this.human.wins += 1;
-      result.innerText = " 🙋🏼‍♀️ HUMAN WINS! 🙋🏼‍♀️ ";
-      humanWins.innerHTML = "wins: " + this.human.wins;
-    } else if (this.winner === "Computer") {
-      this.computer.wins += 1;
-      result.innerText = " 🖥 COMPUTER WINS! 🖥 ";
-      computerWins.innerHTML = "wins: " + this.computer.wins;
-    } else {
-      this.winner = "tie";
-      result.innerText = " 🪢 TIE GAME! 🪢 ";
-    }
-    returnToGame();
+    viewPicks(this.humanDecision, this.computerDecision);
   }
 }
 //icons created by Freepik - Flaticon
