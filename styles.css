@@ -9,6 +9,7 @@ body {
   display: flex;
   font-family: Verdana, sans-serif;
   margin: 0%;
+  overflow-y: hidden;
 }
 
 div {
@@ -169,10 +170,10 @@ p {
 
 .pick {
   display: flex;
-  height: 400px;
+  height: 250px;
   justify-content: space-between;
   padding: 70px;
-  width: 400px;
+  width: 250px;
 }
 
 /* -----Right Aside----- */
