@@ -4,7 +4,7 @@
 
 Have you ever found your mind drifting while trying to get work done on your computer? In this short, whimsical version of Rock, Paper, Scissors (Dolphin, Unicorn), allow yourself a couple moments to drift away into game land and play, before re-setting and returning to the task at hand. Save this simple game to your desktop when you need a fun mental break!
 
-![Rock, Paper, Scissors gif](assets/whatsForDinner.png)
+![Rock, Paper, Scissors gif](https://media.giphy.com/media/7Q7USfIE1XJpHO1aGP/giphy.gif)
 
 In this project, we were asked to build an app that positions the human against the computer in a _classic_ and _advanced_ version of the game Rock Paper, Scissors. The rules to both games are located on the main page, which the user may reference at any time during play. In the classic game, users select a diamond ring (rock), paper airplane (paper), or pair of scissors and play as normal. In the _advanced_ game, a dolphin and unicorn are added.
 
